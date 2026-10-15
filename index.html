@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff0f6">
+  <meta name="description" content="A little birthday world made just for Nikkiii, with love.">
+  <title>For Nikkiii ♡</title>
+  <style>
+    :root{--pink:#f6a9c6;--rose:#d95788;--deep:#8e3159;--cream:#fff9fc;--ink:#51263b;--soft:#ffe4ef}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:ui-rounded,"Segoe UI",system-ui,-apple-system,sans-serif;overflow-x:hidden}
+    button{font:inherit;cursor:pointer}
+    .ambient{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;background:radial-gradient(circle at 10% 10%,#ffe5ef 0,transparent 35%),radial-gradient(circle at 90% 45%,#fce1f0 0,transparent 32%),linear-gradient(135deg,#fffafd,#fff0f6 55%,#fff9fc)}
+    .sparkle{position:absolute;color:#e98bb1;opacity:.42;animation:twinkle 3s ease-in-out infinite alternate}
+    @keyframes twinkle{from{transform:scale(.75) rotate(0);opacity:.2}to{transform:scale(1.15) rotate(18deg);opacity:.7}}
+    .wrap{position:relative;z-index:1}
+    .nav{display:flex;justify-content:space-between;align-items:center;max-width:1080px;margin:auto;padding:20px 22px}
+    .brand{font-family:Georgia,serif;font-size:1.35rem;color:var(--deep);letter-spacing:.02em}
+    .nav span{font-size:.8rem;color:#a65b7b;letter-spacing:.12em;text-transform:uppercase}
+    .hero{min-height:84vh;display:grid;place-items:center;text-align:center;padding:35px 20px 70px}
+    .hero-inner{max-width:760px}
+    .eyebrow{font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--rose);font-weight:700}
+    h1{font:clamp(3.5rem,12vw,7.5rem)/.95 Georgia,'Times New Roman',serif;color:var(--deep);font-weight:500;margin:22px 0 18px;letter-spacing:-.055em}
+    h1 em{font-weight:400;color:#e47da5}
+    .subtitle{font:clamp(1.1rem,3vw,1.4rem)/1.7 Georgia,serif;color:#86506a;max-width:580px;margin:0 auto 30px}
+    .pill{border:0;border-radius:999px;padding:15px 25px;background:linear-gradient(135deg,#e879a4,#d95489);color:white;box-shadow:0 10px 25px #d9578838;transition:transform .2s,box-shadow .2s}
+    .pill:hover{transform:translateY(-3px);box-shadow:0 14px 30px #d9578845}
+    .hint{font-size:.82rem;color:#b17a92;margin-top:13px}
+    .heart-orbit{width:128px;height:100px;margin:0 auto 25px;position:relative;display:grid;place-items:center}
+    .heart{font-size:4rem;color:#e879a4;filter:drop-shadow(0 7px 10px #e879a444);animation:heartbeat 1.7s infinite}
+    .orbit{position:absolute;border:1px solid #eeb2ca;border-radius:50%;width:125px;height:65px;transform:rotate(-25deg)}
+    @keyframes heartbeat{0%,100%{transform:scale(1)}15%{transform:scale(1.12)}30%{transform:scale(1)}45%{transform:scale(1.08)}}
+    section{padding:72px 20px;scroll-margin-top:20px}
+    .section-inner{max-width:960px;margin:auto}
+    .section-title{text-align:center;font:clamp(2.1rem,6vw,3.5rem)/1.1 Georgia,serif;font-weight:400;color:var(--deep);margin:0 0 12px}
+    .section-intro{text-align:center;color:#9b6b81;line-height:1.7;max-width:580px;margin:0 auto 35px}
+    .memory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .memory{background:#fff;border:1px solid #f7d8e5;padding:12px;border-radius:20px;box-shadow:0 12px 30px #a94c7110;transform:rotate(var(--tilt,0deg));transition:transform .25s}
+    .memory:hover{transform:translateY(-5px) rotate(0)}
+    .photo-frame{height:245px;border-radius:13px;background:linear-gradient(145deg,#ffe4ef,#fff5f9);overflow:hidden;display:grid;place-items:center;color:#bc7292;text-align:center;padding:14px}
+    .photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
+    .photo-placeholder .camera{font-size:2rem;display:block;margin-bottom:8px}
+    .photo-placeholder small{display:block;font-size:.76rem;line-height:1.5}
+    .memory p{font:1.05rem Georgia,serif;text-align:center;color:#8b4565;margin:14px 4px 5px}
+    .letter-card{max-width:690px;margin:auto;padding:clamp(25px,6vw,52px);background:#fff;border:1px solid #f6d0e0;border-radius:26px;box-shadow:0 20px 60px #b84c7810;position:relative}
+    .letter-card:before{content:"";position:absolute;inset:10px;border:1px solid #fbe3ec;border-radius:19px;pointer-events:none}
+    .letter-top{text-align:center;font-size:2rem;margin-bottom:18px}
+    .letter-text{font:clamp(1.04rem,2.5vw,1.2rem)/1.95 Georgia,serif;color:#75415a;white-space:pre-line}
+    .signature{font:italic 1.35rem Georgia,serif;text-align:right;color:#d95788;margin-top:24px}
+    .reveal-wrap{text-align:center}
+    .gift{font-size:5.3rem;display:block;margin:10px auto 18px;animation:bob 2.5s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-9px) rotate(3deg)}}
+    .surprise-message{display:none;max-width:640px;margin:25px auto 0;background:#fff;border-radius:24px;padding:28px;border:1px solid #f5ccdc;box-shadow:0 14px 35px #a94c7110;line-height:1.9;color:#82465f}
+    .surprise-message.show{display:block;animation:rise .65s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+    .closing{text-align:center;padding:80px 20px 65px}
+    .closing .big-heart{font-size:2.3rem;color:#e879a4}
+    .closing h2{font:clamp(2.3rem,7vw,4.2rem)/1.1 Georgia,serif;font-weight:400;color:var(--deep);margin:18px auto}
+    .closing p{color:#9b6b81}
+    footer{text-align:center;padding:20px;color:#bd8ba1;font-size:.8rem}
+    .floating-heart{position:fixed;z-index:9;pointer-events:none;animation:float-up 2.6s ease-out forwards}
+    @keyframes float-up{0%{transform:translateY(0) scale(.7) rotate(0);opacity:0}15%{opacity:.9}100%{transform:translateY(-110vh) scale(1.5) rotate(35deg);opacity:0}}
+    .music-note{font-size:.8rem;color:#ad7189;margin-top:14px}
+    @media(max-width:680px){.nav{padding:16px}.nav span{font-size:.65rem}.hero{min-height:78vh;padding-top:30px}.memory-grid{grid-template-columns:1fr;max-width:380px;margin:auto;gap:16px}.photo-frame{height:300px}.memory:nth-child(2){--tilt:1deg}.memory:nth-child(3){--tilt:-1deg}section{padding:58px 17px}.letter-card{padding:30px 25px}.letter-card:before{inset:7px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true" id="ambient"></div>
+  <div class="wrap">
+    <nav class="nav"><div class="brand">a little something ♡</div><span>made with love</span></nav>
+    <main>
+      <header class="hero" id="home">
+        <div class="hero-inner">
+          <div class="heart-orbit"><div class="orbit"></div><div class="heart">♥</div></div>
+          <div class="eyebrow">a little secret, made with love</div>
+          <h1>Nikkiii,<br><em>this is for you</em></h1>
+          <p class="subtitle">I made a little something just for you… a tiny world filled with love, memories, and birthday magic. Ready to open it, birthday girl? ♡</p>
+          <button class="pill" id="beginBtn">Open your little surprise ✨</button>
+          <div class="hint">Psst… your birthday surprise is waiting inside 💗</div>
+        </div>
+      </header>
+
+      <section id="memories">
+        <div class="section-inner">
+          <h2 class="section-title">Little moments, big feelings</h2>
+          <p class="section-intro">Some moments become memories. Some people become home. You somehow became both.</p>
+          <div class="memory-grid">
+            <article class="memory" style="--tilt:-1deg"><div class="photo-frame" id="frame1"><div class="photo-placeholder"><span class="camera">♡</span><strong>Your favourite photo</strong><small>Add your photo as <b>photo1.jpg</b> inside the photos folder</small></div></div><p>My favourite kind of happiness</p></article>
+            <article class="memory" style="--tilt:1deg"><div class="photo-frame" id="frame2"><div class="photo-placeholder"><span class="camera">✿</span><strong>A memory with you</strong><small>Add your photo as <b>photo2.jpg</b> inside the photos folder</small></div></div><p>A moment I’d keep forever</p></article>
+            <article class="memory" style="--tilt:-.5deg"><div class="photo-frame" id="frame3"><div class="photo-placeholder"><span class="camera">♡</span><strong>Just you being you</strong><small>Add your photo as <b>photo3.jpg</b> inside the photos folder</small></div></div><p>My favourite person, always</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="letter">
+        <div class="section-inner">
+          <h2 class="section-title">A letter for you 💌</h2>
+          <p class="section-intro">Not just birthday words. A little piece of my heart.</p>
+          <div class="letter-card">
+            <div class="letter-top">♡</div>
+            <div class="letter-text">My dearest Nikkiii,
+
+Happy Birthday to the girl who makes ordinary days feel a little more magical. I hope this new chapter brings you the kind of happiness that stays, the kind of laughter that makes your cheeks hurt, and countless little reasons to smile.
+
+You deserve love that feels gentle, days that feel bright, dreams that come closer, and people who remind you how special you are. I hope you never forget how much your presence can mean and how beautifully you make the world feel to the people who care about you.
+
+If I could wish one thing for you, it would be that you see yourself through the kind eyes of the people who love you. You are precious, you are appreciated, and you deserve all the lovely things life has waiting for you.
+
+Thank you for being you. I hope this little surprise makes you smile today — because your smile is one of my favourite things.
+
+Today is all about you, birthday girl. Make a wish, close your eyes, and know that someone is cheering for you with all his heart.
+
+Happy Birthday, my Nikkiii. May this year be as lovely as the happiness you bring into my life. ♡</div>
+            <div class="signature">With all my love, always ♡</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="surprise">
+        <div class="section-inner reveal-wrap">
+          <h2 class="section-title">One last little thing…</h2>
+          <p class="section-intro">Because one surprise could never be enough for you.</p>
+          <span class="gift" aria-hidden="true">🎁</span>
+          <button class="pill" id="revealBtn">Tap to unwrap your surprise 💗</button>
+          <div class="surprise-message" id="surpriseMessage">
+            <h3 style="font:2rem Georgia,serif;color:#b84878;margin:0 0 12px">For my Nikkiii ♡</h3>
+            No website could ever fit every reason you’re special to me. So here’s a simple reminder: you matter, your happiness matters, and I hope this birthday gives you a hundred reasons to smile. Whatever this new year brings, I’m wishing you beautiful memories, peaceful days, exciting dreams, and love that makes you feel safe and appreciated. Keep shining in your own way, birthday girl. The world is sweeter with you in it. 🌷
+            <div style="font-size:1.7rem;margin-top:15px">♡ ✨ ♡</div>
+          </div>
+        </div>
+      </section>
+      <div class="closing">
+        <div class="big-heart">♥</div>
+        <h2>Today is yours,<br>Nikkiii.</h2>
+        <p>May your wishes find their way to you. Happy Birthday, beautiful soul. 🌸</p>
+        <button class="pill" id="heartsBtn">Send yourself a little love ♡</button>
+      </div>
+    </main>
+    <footer>Made with love, just for Nikkiii · ♡</footer>
+  </div>
+  <script>
+    const ambient = document.getElementById('ambient');
+    for (let i=0;i<22;i++){
+      const s=document.createElement('span');s.className='sparkle';s.textContent=i%3===0?'✦':'·';
+      s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.fontSize=(12+Math.random()*20)+'px';s.style.animationDelay=(Math.random()*3)+'s';ambient.appendChild(s);
+    }
+    function burst(count=18){
+      const symbols=['♡','♥','✦','✿'];
+      for(let i=0;i<count;i++){
+        const h=document.createElement('span');h.className='floating-heart';h.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+        h.style.left=(Math.random()*100)+'vw';h.style.bottom=(-10+Math.random()*10)+'px';h.style.fontSize=(16+Math.random()*23)+'px';h.style.color=['#e879a4','#d95788','#c989b1','#f1a5c2'][Math.floor(Math.random()*4)];h.style.animationDelay=(Math.random()*.8)+'s';
+        document.body.appendChild(h);setTimeout(()=>h.remove(),3500);
+      }
+    }
+    document.getElementById('beginBtn').addEventListener('click',()=>{document.getElementById('memories').scrollIntoView({behavior:'smooth'});burst(16)});
+    document.getElementById('revealBtn').addEventListener('click',()=>{const m=document.getElementById('surpriseMessage');m.classList.toggle('show');document.getElementById('revealBtn').textContent=m.classList.contains('show')?'Your surprise is open ♡':'Tap to unwrap your surprise 💗';if(m.classList.contains('show'))burst(28)});
+    document.getElementById('heartsBtn').addEventListener('click',()=>burst(45));
+    // Photos are optional. Put photo1.jpg, photo2.jpg and photo3.jpg in the photos folder.
+    [1,2,3].forEach(n=>{
+      const img=new Image();img.src=`photos/photo${n}.jpg`;
+      img.onload=()=>{const frame=document.getElementById(`frame${n}`);frame.innerHTML='';frame.appendChild(img);img.alt=`Memory photo ${n} for Nikkiii`;};
+    });
+  </script>
+</body>
+</html>
